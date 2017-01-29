@@ -61,3 +61,15 @@ comp-aside {
     color: $color-white;
     background-color: $color-gray2;
 }
+
+@include mobile {
+    body {
+        overflow: auto;
+    }
+    main {
+        height: auto;
+        form {
+            margin-bottom: 20px;
+        }
+    }
+}
