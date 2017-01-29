@@ -1,0 +1,6 @@
+.tmp
+.git
+node_modules
+.settings
+*.log
+dist/

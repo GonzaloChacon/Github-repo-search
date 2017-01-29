@@ -1,0 +1,35 @@
+/* Bootstrap panel override */
+
+.panel {
+    border: 0;
+    -webkit-box-shadow: $panel-shadow;
+    box-shadow: $panel-shadow;
+    &-heading {
+        border-top: 3px solid $color-secondary;
+        text-align: center;
+        border-bottom: 1px solid $color-gray;
+    }
+    &-body {
+        i {
+            color: $color-gray2;
+        }
+    }
+    &-footer {
+        border-top: 1px solid $color-secondary;
+        a {
+            word-break: break-word;
+            display: inline-block;
+            position: relative;
+            height: 17px;
+            min-width: 20px;
+            @include rem-px(line-height, 2.5);
+            +a {
+                margin-left: 10px;
+            }
+            i {
+                @include rem-px(font-size, 2.2);
+                position: absolute;
+            }
+        }
+    }
+}

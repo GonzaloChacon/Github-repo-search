@@ -1,0 +1,14 @@
+form {
+    fieldset {
+        border: none;
+        margin: 0;
+    }
+    input,
+    textarea,
+    button {
+        border-radius: $form-elements-border-radius;
+    }
+    input[type="text"] {
+        color: $input-color;
+    }
+}

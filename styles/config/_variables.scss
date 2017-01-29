@@ -1,0 +1,42 @@
+/*  Colors  */
+
+// Primary
+$color-primary: rgb(0, 44, 119);
+// Secondary
+$color-secondary: rgb(245, 109, 0);
+// Links
+$color-link: rgb(21, 122, 177);
+$color-link-active: rgb(16, 86, 123);
+$color-link-hover: rgb(26, 153, 223);
+//Others
+$color-black: rgb(0, 0, 0);
+$color-white: rgb(255, 255, 255);
+$color-gray: lighten($color-black, 95%);
+$color-gray2: lighten($color-black, 12%);
+// Backgrounds
+$bg-gray: $color-gray;
+
+/*  Fonts  */
+
+// Font Family
+$font-sans-serif: 'Roboto',
+sans-serif;
+// Font Colors
+$font-color: lighten($color-black, 30%);
+
+/* Panels */
+
+$panel-shadow: 1px 2px 6px rgba(119, 119, 199, 0.3);
+
+/* Form elements */
+
+// General
+$form-elements-border-radius: 2px;
+// Inputs 
+$input-color: rgb(85, 85, 85);
+
+/* Media querys */
+
+$tablet-width: 768px;
+$desktop-width: 1055px;
+$desktop-lg-width: 1200px;

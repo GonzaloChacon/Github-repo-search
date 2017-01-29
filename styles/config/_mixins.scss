@@ -1,0 +1,40 @@
+@mixin rem-px($property, $remValues...) {
+    $pxs: ();
+    $rems: ();
+    @each $value in $remValues {
+        $pxs: append($pxs, $value*10+px, space);
+        $rems: append($rems, $value+rem, space);
+    }
+    #{$property}: $pxs;
+    #{$property}: $rems;
+}
+
+@mixin mobileDesigns {
+    @media only screen and (max-width: #{$desktop-lg-width}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media only screen and (max-width: #{$tablet-width - 1}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: #{$desktop-width}) and (max-width: #{$desktop-lg-width - 1}) {
+        @content;
+    }
+}
+
+@mixin desktop-lg {
+    @media only screen and (min-width: #{$desktop-lg-width}) {
+        @content;
+    }
+}

@@ -1,0 +1,14 @@
+h1 {
+    @include rem-px(font-size, 3.7);
+    font-weight: bold;
+    i {
+        @include rem-px(font-size, 10);
+    }
+    span {
+        display: block;
+        font-style: italic;
+        color: $color-gray;
+        font-weight: italic;
+        @include rem-px(font-size, 1.2);
+    }
+}

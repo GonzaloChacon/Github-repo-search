@@ -1,0 +1,31 @@
+.repos {
+    height: 100%;
+    overflow-y: auto;
+    &-grid {
+        margin: 10px 0;
+        column-width: 250px;
+        column-gap: 15px;
+        width: 100%;
+        article {
+            width: 100%;
+            transition: opacity .4s ease-in-out;
+            display: inline-block;
+            column-break-inside: avoid;
+        }
+        &:hover article:not(:hover) {
+            opacity: 0.4;
+        }
+    }
+    &-filter {
+        @include rem-px(font-size, 1.5);
+        margin: 10px 0 20px;
+        padding: 10px 0;
+        border-bottom: 1px solid $color-gray2;
+    }
+}
+
+@include mobile {
+    .repos-grid {
+        column-gap: 0px;
+    }
+}

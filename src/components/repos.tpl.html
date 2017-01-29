@@ -1,0 +1,39 @@
+<!-- Repo's count -->
+<section class="repos-filter">
+    <span data-ng-if="$ctrl.repos.length > 1">{{$ctrl.repos.length}} repos available!</span>
+    <span data-ng-if="$ctrl.repos.length <= 1">{{$ctrl.repos.length}} repo available!</span>
+</section>
+<!-- / Repo's count -->
+
+<!-- Repo's grid -->
+<div class="repos-grid">
+
+    <article data-ng-repeat="repo in $ctrl.repos track by repo.id">
+        <!-- Card item -->
+        <div class="panel">
+
+            <header class="panel-heading">
+                <h4>{{repo.name}}</h4>
+            </header>
+
+            <section class="panel-body">
+                <p>
+                    <span><i>Created:</i> <b>{{repo.created_at | date}}</b></span><br>
+                    <span><i>Last update:</i> <b>{{repo.updated_at | date}}</b></span><br>
+                    <span class="label label-danger" data-ng-if="repo.private">Private Repo</span>
+                    <span class="label label-success" data-ng-if="!repo.private">Public Repo</span>
+                </p>
+                <p data-ng-if="repo.description"><i>Description:</i><br> {{repo.description}}</p>
+            </section>
+
+            <footer class="panel-footer">
+                <a href="{{repo.html_url}}" target="_blank"><i class="fa fa-git-square" aria-hidden="true"></i></a>
+                <a data-ng-if="repo.homepage" href="{{repo.homepage}}" target="_blank">Homepage</a>
+            </footer>
+
+        </div>
+        <!-- / Card item -->
+    </article>
+
+</div>
+<!-- / Repo's grid -->

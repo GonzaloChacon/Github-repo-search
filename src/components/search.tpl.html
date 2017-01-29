@@ -1,0 +1,15 @@
+<!-- Form search -->
+<form name="searchForm" data-ng-submit="$ctrl.onChange($ctrl.value)">
+
+    <fieldset class="form-group">
+        <label for="repoName">Type a username</label>
+        <div class="input-group input-group-sm">
+            <span class="input-group-addon" id="repoName"><i class="glyphicon glyphicon-user"></i></span>
+            <input name="repoName" type="text" data-ng-model="$ctrl.value" class="form-control" placeholder="Username" aria-describedby="repoName" required>
+        </div>
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary btn-small btn-block">Search</button>
+
+</form>
+<!-- / Form search -->
