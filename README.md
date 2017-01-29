@@ -1,5 +1,5 @@
 # Github Repo Search
----
+
 > Implementation of AngularJS 1 and Redux to search user repositories
 ---
 
