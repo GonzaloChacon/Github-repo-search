@@ -1,8 +1,7 @@
 import {
     getIsFetching,
     getSelectedItems,
-    getSelectedGithubObject,
-    getItemsCount
+    getSelectedGithubObject
 } from '../../src/selectors/selectors';
 
 const state = {
@@ -74,9 +73,4 @@ describe('getSelectedItems', function() {
         newState.reposByGithub.repotest.isFetching = true;
         getIsFetching(newState).should.be.true;
     });
-
-    it('should return items length', function() {
-        getItemsCount(state).should.eql(expectedRepotest.items.length);
-    });
-
 });

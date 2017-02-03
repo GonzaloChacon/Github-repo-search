@@ -1,5 +1,3 @@
-import { createSelector } from 'reselect'
-
 const EMPTY_ITEMS = {
     items: [],
     isFetching: true,
@@ -18,15 +16,9 @@ const getSelectedItems = (state) => {
     return getSelectedGithubObject(state).items;
 }
 
-const getItemsCount = createSelector(
-    getSelectedItems,
-    (items) => items.length
-);
-
 
 export {
     getSelectedGithubObject,
     getIsFetching,
-    getSelectedItems,
-    getItemsCount
+    getSelectedItems
 }

@@ -16,7 +16,7 @@ module.exports = {
     plugins: [
         extractCSS,
         new HtmlWebpackPlugin({
-            title: 'GoEuro | GitHub app',
+            title: 'User GitHub repo list',
             template: './src/index.html',
             inject: 'body'
         }),

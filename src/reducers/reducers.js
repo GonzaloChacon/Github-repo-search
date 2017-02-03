@@ -8,7 +8,7 @@ import {
     API_DOWN
 } from '../actions/_actions';
 
-export function selectedGithub(state = 'goeuro', action) {
+export function selectedGithub(state = 'gonzalochacon', action) {
     switch (action.type) {
         case SELECT_GITHUB:
             return action.github;

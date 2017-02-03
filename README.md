@@ -1,13 +1,13 @@
 # Github Repo Search
 
-Implementation of AngularJS 1 and Redux to search user repositories
+Implementation of AngularJS and Redux to search user repositories
 ---
 
 ### List of features:
 
 - Angular 1.x `.component()` method
 - Webpack
-- Redux
+- Redux (ng-redux)
 - Spec files included
 - Proper SCSS architecture to provide maintainable, scalable and well-organized code
 

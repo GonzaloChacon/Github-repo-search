@@ -1,7 +1,7 @@
 {
-    "name": "goeuro",
+    "name": "githubrepolist",
     "version": "0.0.0",
-    "description": "GoEuro | Github app",
+    "description": "Github app to display a user's repo list",
     "scripts": {
         "start": "webpack-dev-server --watch --content-base src/ --inline",
         "test": "karma start"
