@@ -1,8 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var extractCSS = new ExtractTextPlugin('[name].css');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map',
@@ -11,39 +10,68 @@ module.exports = {
     ],
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
     plugins: [
-        extractCSS,
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: '[name].css',
+            chunkFilename: '[id].css',
+        }),
         new HtmlWebpackPlugin({
-            title: 'User GitHub repo list',
             template: './src/index.html',
             inject: 'body'
         }),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin()
     ],
 
     module: {
-        loaders: [{
-                test: /\.js$/,
-                loaders: ['babel-loader'],
-                exclude: /node_modules/,
+        rules: [{
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
             },
             {
                 test: /\.(woff2?|ttf|eot|svg)$/,
                 loader: 'url?limit=10000'
             },
             {
-                test: /\.(scss|sass)$/,
-                loader: extractCSS.extract(['raw-loader', 'sass-loader'])
+                test: /\.(sa|sc|c)ss$/,
+                use: [
+                {
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                    hmr: process.env.NODE_ENV === 'development',
+                    },
+                },
+                'css-loader',
+                'sass-loader',
+                ],
             },
             {
                 test: /\.css$/,
-                loader: 'style!css'
+                use: [
+                    {
+                      loader: MiniCssExtractPlugin.loader,
+                      options: {
+                        // you can specify a publicPath here
+                        // by default it uses publicPath in webpackOptions.output
+                        publicPath: '../',
+                        hmr: process.env.NODE_ENV === 'development',
+                      },
+                    },
+                    'css-loader',
+                  ]
             },
             {
                 test: /\.html$/,
-                loader: 'html'
+                loader: 'html-loader'
             }
         ]
     }

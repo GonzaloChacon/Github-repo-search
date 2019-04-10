@@ -52,7 +52,9 @@ export default function githubActions($http) {
                     };
                     throw error;
                 })
-                .then(json => dispatch(receiveRepos(github, json)));
+                .then(json => {
+                    dispatch(receiveRepos(github, json))
+                });
         };
     }
 

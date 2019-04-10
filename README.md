@@ -5,7 +5,7 @@ Implementation of AngularJS and Redux to search user repositories
 
 ### List of features:
 
-- Angular 1.x `.component()` method
+- Angular 1.7 `.component()` method
 - Webpack
 - Redux (ng-redux)
 - Spec files included
@@ -32,3 +32,9 @@ npm start
 # run tests
 npm test
 ```
+
+### TODO:
+Old project to test ng-redux, needs to be updated
+
+- Add and update tests
+- Create UI

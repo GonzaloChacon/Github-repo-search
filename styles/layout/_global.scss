@@ -47,7 +47,11 @@ a,
     display: block;
 }
 
-
+h4 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 /* Components setup */
 
 comp-main,

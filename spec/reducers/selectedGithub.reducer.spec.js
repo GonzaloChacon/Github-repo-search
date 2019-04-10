@@ -13,8 +13,8 @@ import {
 } from '../../src/actions/_actions';
 
 describe('selectedGithub reducer', function() {
-    it('should set initial state to gonzalochacon', function() {
-        selectedGithub(undefined, {}).should.equal('gonzalochacon')
+    it('should set initial state to redux', function() {
+        selectedGithub(undefined, {}).should.equal('redux')
     });
 
     it('should ignore unknown action', function() {
@@ -23,7 +23,7 @@ describe('selectedGithub reducer', function() {
     });
 
     it('should set selected github', function() {
-        const state = 'gonzalochacon';
+        const state = 'redux';
         const action = { type: SELECT_GITHUB, github: 'newuser' };
         selectedGithub(state, action).should.equal('newuser');
     });

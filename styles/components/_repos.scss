@@ -3,7 +3,11 @@
     overflow-y: auto;
     &-grid {
         margin: 10px 0;
+        -moz-column-width: 250px;
+        -webkit-column-width: 250px;
         column-width: 250px;
+        -moz-column-gap: 15px;
+        -webkit-column-gap: 15px;
         column-gap: 15px;
         width: 100%;
         article {
